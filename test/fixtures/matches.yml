@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_at: 2021-08-19 22:20:10
+  team_1: one
+  team_1: one
+
+two:
+  start_at: 2021-08-19 22:20:10
+  team_1: two
+  team_1: two
