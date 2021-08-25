@@ -14,9 +14,9 @@ Tournament.create([
 
 Team.create([
     {name: "Furia", country: "BR"}, 
-    {name: "Team One", country: "BR"}, 
+    {name: "Spirit", country: "RU"},
     {name: "G2", country: "EU"}, 
-    {name: "Spirit", country: "RU"}
+    {name: "Team One", country: "BR"},
 ])
 
 team = Team.find_by(name: "Furia")
@@ -36,3 +36,27 @@ Player.create([
     {nickname: "degster", first_name: "Abdul", team: team},
     {nickname: "magixx", first_name: "Boris", team: team}
 ])
+
+team = Team.find_by(name: "G2")
+Player.create([
+    {nickname: "JaCkz", first_name: "Audric", team: team},
+    {nickname: "NiKo", first_name: "Nikola", team: team},
+    {nickname: "huNter-", first_name: "Nemanja", team: team},
+    {nickname: "AmaNEk", first_name: "François", team: team},
+    {nickname: "nexa", first_name: "Nemanja", team: team}
+])
+
+team = Team.find_by(name: "Team One")
+Player.create([
+    {nickname: "Maluk3", first_name: "Pedro", team: team},
+    {nickname: "prt", first_name: "Matheus", team: team},
+    {nickname: "malbsMd", first_name: "Mario", team: team},
+    {nickname: "pesadelo", first_name: "Matheus", team: team},
+    {nickname: "xns", first_name: "Enzo", team: team}
+])
+
+
+tournament = Tournament.find_by(country: "EU")
+t1 = Team.find_by(name: "Team One")
+t2 = Team.find_by(name: "Furia")
+Match.create([ {tournament: tournament, team_1: t1, team_2: t2} ])

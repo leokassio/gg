@@ -82,5 +82,3 @@ test:
 production:
   <<: *default
   database: gg_production
-  username: gg
-  password: <%= ENV['GG_DATABASE_PASSWORD'] %>

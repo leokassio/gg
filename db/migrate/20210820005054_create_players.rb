@@ -5,6 +5,7 @@ class CreatePlayers < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.string :nickname
       t.string :country
+      t.string :photo
       t.references :team, index: true, foreign_key: true
 
       t.timestamps
