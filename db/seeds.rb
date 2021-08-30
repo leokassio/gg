@@ -12,10 +12,14 @@ Tournament.create([
     {name: "ESL Pro League Season 14", country: "EU"}
 ])
 
+Tournament.create([
+    {name: "Blast Pro Series", country: "EU"}
+])
+
 Team.create([
-    {name: "Furia", country: "BR"}, 
+    {name: "Furia", country: "BR"},
     {name: "Spirit", country: "RU"},
-    {name: "G2", country: "EU"}, 
+    {name: "G2", country: "EU"},
     {name: "Team One", country: "BR"},
 ])
 
@@ -56,7 +60,15 @@ Player.create([
 ])
 
 
-tournament = Tournament.find_by(country: "EU")
+tournament = Tournament.find_by(name: "ESL Pro League Season 14")
+t1 = Team.find_by(name: "Furia")
+t2 = Team.find_by(name: "Team One")
+t3 = Team.find_by(name: "G2")
+Match.create([ {tournament: tournament, teams: [t1, t2]} ])
+Match.create([ {tournament: tournament, teams: [t1, t3]} ])
+
+tournament = Tournament.find_by(name: "Blast Pro Series")
 t1 = Team.find_by(name: "Team One")
-t2 = Team.find_by(name: "Furia")
-Match.create([ {tournament: tournament, team_1: t1, team_2: t2} ])
+t2 = Team.find_by(name: "G2")
+Match.create([ {tournament: tournament, teams: [t1, t2]} ])
+

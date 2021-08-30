@@ -1,11 +1,10 @@
 class Team < ApplicationRecord
 
-    has_many :players
-    has_many :matches1, class_name: "Match", foreign_key: "team_1_id"
-    has_many :matches2, class_name: "Match", foreign_key: "team_2_id"
+    # has_many :team_tournament_participations
+    has_many :team_match_participations
 
-    def matches
-        matches1.concat(matches2)
-    end
+    has_many :players
+    has_many :matches, through: :team_match_participations, source: :match
+    has_many :tournaments, through: :matches
 
 end

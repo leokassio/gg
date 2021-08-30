@@ -4,6 +4,8 @@ class CreateTournaments < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :country
       t.string :logo
+      t.date :start_day
+      t.date :end_day
 
       t.timestamps
     end
